@@ -85,7 +85,9 @@ function openFloatingVideo(key){
   }else if(link.toLowerCase().split(/[?#]/)[0].endsWith('.mp4')){
     const vid=document.createElement('video');vid.src=link;vid.controls=true;vid.autoplay=true;vid.playsInline=true;dockBody.append(vid);
   }
-  dock.classList.toggle('is-portrait', key.startsWith('split-'));
+  // Keep the floating video player at 16:9 for every game, including SPLIT.
+  // The SPLIT project preview itself stays portrait and is not modified.
+  dock.classList.remove('is-portrait');
   dock.hidden=false;dock.classList.remove('is-minimized');
   dockMin.setAttribute('aria-label','영상 최소화');dockMin.textContent='−';
 }
