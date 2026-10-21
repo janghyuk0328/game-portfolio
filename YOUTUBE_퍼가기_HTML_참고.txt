@@ -1,0 +1,40 @@
+YouTube 자동 퍼가기 HTML 코드 예시
+
+※ HTML 파일을 file://로 직접 열면 YouTube 오류 153이 발생할 수 있습니다. GitHub Pages(HTTPS)나 http://localhost 웹서버에서 확인하세요.
+※ 이 사이트는 content.js에서 YouTube URL만 바꾸면 아래 iframe을 자동 생성합니다. 직접 붙여넣을 필요는 없습니다.
+
+[battle-main] Battle Arena — 게임 플레이 / 수정 후 레벨
+https://youtu.be/HG0taYqeBTU
+<iframe src="https://www.youtube.com/embed/HG0taYqeBTU" title="Battle Arena — 게임 플레이 / 수정 후 레벨" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[battle-before] Battle Arena — 수정 전 레벨 플레이
+https://youtu.be/SOXltZO_auk
+<iframe src="https://www.youtube.com/embed/SOXltZO_auk" title="Battle Arena — 수정 전 레벨 플레이" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[battle-after] Battle Arena — 수정 후 레벨 플레이
+https://youtu.be/HG0taYqeBTU
+<iframe src="https://www.youtube.com/embed/HG0taYqeBTU" title="Battle Arena — 수정 후 레벨 플레이" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[battle-test] Battle Arena — 레벨 및 서버 테스트
+https://youtu.be/y7G1vywwfdA
+<iframe src="https://www.youtube.com/embed/y7G1vywwfdA" title="Battle Arena — 레벨 및 서버 테스트" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[rolling-play] Rolling LEO — 실제 플레이 영상
+https://youtu.be/P2sxLejqUzs
+<iframe src="https://www.youtube.com/embed/P2sxLejqUzs" title="Rolling LEO — 실제 플레이 영상" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[rolling-trailer] Rolling LEO — 트레일러
+https://youtu.be/FZWg0LaGTcI
+<iframe src="https://www.youtube.com/embed/FZWg0LaGTcI" title="Rolling LEO — 트레일러" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[split-one] SPLIT — 1인 플레이
+https://youtu.be/CAmaXdOYuFo
+<iframe src="https://www.youtube.com/embed/CAmaXdOYuFo" title="SPLIT — 1인 플레이" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[split-intro] SPLIT — 게임 소개 영상
+https://youtu.be/j7Z1VdRh9fg
+<iframe src="https://www.youtube.com/embed/j7Z1VdRh9fg" title="SPLIT — 게임 소개 영상" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[trello-demo] GPT × Trello — 업무 자동화 시연
+https://youtu.be/fC9phJB7e6w
+<iframe src="https://www.youtube.com/embed/fC9phJB7e6w" title="GPT × Trello — 업무 자동화 시연" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
