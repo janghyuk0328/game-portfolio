@@ -19,6 +19,7 @@ function safeMedia(url){if(typeof url!=='string')return null;const ext=safeExter
 function showModal(title,eyebrow){modal.classList.remove('portrait-video');previousFocus=document.activeElement;modalTitle.textContent=title;modalBrow.textContent=eyebrow||'PORTFOLIO MEDIA';modalBody.replaceChildren();modalExternal.hidden=true;modalExternal.textContent='새 탭에서 열기 ↗';modal.removeAttribute('hidden');document.body.classList.add('modal-open');$('#modal-close').focus();}
 function closeModal(){if(modal.hidden)return;modal.classList.remove('portrait-video');modal.setAttribute('hidden','');modalBody.replaceChildren();document.body.classList.remove('modal-open');if(previousFocus&&typeof previousFocus.focus==='function')previousFocus.focus();}
 function showVideo(key){
+ if(key!=='trello-demo'){openFloatingVideo(key);return;}
  const v=data.videos?.[key];if(!v||!v.url)return;
  const link=safeMedia(v.url);if(!link)return;
  showModal(v.title,v.label);
@@ -66,6 +67,54 @@ $$('[data-optional-video]').forEach(el=>{
 $$('[data-pdf-download]').forEach(el=>{const d=data.documents?.[el.dataset.pdfDownload];if(d?.path)el.setAttribute('href',d.path);else el.hidden=true;});
 $$('[data-doc-status]').forEach(el=>{const d=data.documents?.[el.dataset.docStatus];if(!d)return;if(d.kind==='full')el.textContent='원본 기획서 전체 PDF입니다. 브라우저에서 열람하거나 다운로드할 수 있습니다.';else el.textContent='※ 개요 PDF에서 발췌한 소개 1페이지입니다. 원본 기획서 전체 파일은 아직 업로드되지 않았습니다.';});
 
+
+// Nonblocking player: stays on screen while the visitor scrolls project explanations.
+const dock=$('#video-dock'), dockBody=$('#dock-body'), dockTitle=$('#dock-title'), dockYoutube=$('#dock-youtube');
+const dockMin=$('#dock-minimize'),dockBig=$('#dock-expand'),dockClose=$('#dock-close');
+function openFloatingVideo(key){
+  const v=data.videos?.[key]; if(!v?.url)return;
+  const link=safeMedia(v.url); if(!link)return;
+  dockTitle.textContent=v.title; dockYoutube.href=link;
+  const id=youtubeId(link);dockBody.replaceChildren();
+  if(id){
+    const frame=document.createElement('iframe');
+    frame.src='https://www.youtube.com/embed/'+encodeURIComponent(id)+'?autoplay=1&rel=0&playsinline=1';
+    frame.title=v.title;frame.loading='eager';frame.referrerPolicy='strict-origin-when-cross-origin';
+    frame.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    frame.allowFullscreen=true;dockBody.append(frame);
+  }else if(link.toLowerCase().split(/[?#]/)[0].endsWith('.mp4')){
+    const vid=document.createElement('video');vid.src=link;vid.controls=true;vid.autoplay=true;vid.playsInline=true;dockBody.append(vid);
+  }
+  dock.classList.toggle('is-portrait', key.startsWith('split-'));
+  dock.hidden=false;dock.classList.remove('is-minimized');
+  dockMin.setAttribute('aria-label','영상 최소화');dockMin.textContent='−';
+}
+dockMin?.addEventListener('click',()=>{
+  const min=dock.classList.toggle('is-minimized');
+  dockMin.setAttribute('aria-label',min?'영상 다시 펼치기':'영상 최소화');
+  dockMin.textContent=min?'▢':'−';
+});
+dockBig?.addEventListener('click',()=>dock.classList.toggle('is-expanded'));
+dockClose?.addEventListener('click',()=>{dock.hidden=true;dock.classList.remove('is-minimized','is-expanded','is-portrait');dockBody.replaceChildren();});
+
+// Independently controlled photo carousels for SPLIT / GGC and Rolling LEO / G-STAR.
+$$('[data-photo-carousel]').forEach(carousel=>{
+ const photos=data.photos?.[carousel.dataset.photoCarousel]||[];
+ if(!photos.length)return;
+ let idx=0;
+ const photo=$('[data-photo-image]',carousel),counter=$('[data-photo-counter]',carousel),caption=$('[data-photo-caption]',carousel);
+ function show(n){
+  idx=(n+photos.length)%photos.length;
+  const item=photos[idx];photo.src=item.src;photo.alt=item.caption;
+  counter.textContent=String(idx+1).padStart(2,'0')+' / '+String(photos.length).padStart(2,'0');
+  caption.textContent=item.caption;
+ }
+ $('[data-photo-prev]',carousel).addEventListener('click',()=>show(idx-1));
+ $('[data-photo-next]',carousel).addEventListener('click',()=>show(idx+1));
+ $('[data-carousel-zoom]',carousel).addEventListener('click',()=>showImage(photos[idx].src,photos[idx].caption));
+ show(0);
+});
+
 // Interactive gallery: two actual level-review screenshots. Photo click enlarges it; video is a separate button.
 $$('[data-level-slider]').forEach(slider=>{
   const slides=$$('.level-slide-image',slider);
@@ -74,7 +123,7 @@ $$('[data-level-slider]').forEach(slider=>{
   function showAt(next){
     active=(next+slides.length)%slides.length;
     slides.forEach((slide,i)=>{slide.hidden=i!==active;});
-    if(label)label.textContent=active===0?'01 / 02 · 블록아웃 구조':'02 / 02 · 제작 레벨 화면';
+    if(label)label.textContent=active===0?'01 / 02 · BEFORE / 초기 더미 레벨':'02 / 02 · AFTER / 피드백 반영 레벨';
   }
   $('[data-slider-prev]',slider)?.addEventListener('click',()=>showAt(active-1));
   $('[data-slider-next]',slider)?.addEventListener('click',()=>showAt(active+1));
