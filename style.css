@@ -265,3 +265,55 @@
   .video-dock.is-portrait.is-expanded{width:min(330px,calc((100dvh - 170px)*9/16),calc(100vw - 16px));}
   .contact-phone{font-size:21px;}
 }
+
+
+/* v4.4 — resume and Indiecraft documents, project reflection blocks */
+.resume-info-panel{border:1px solid #5b4b20;background:linear-gradient(115deg,#1b1b1d 0%,#252011 100%)}
+.resume-panel-note{margin:12px 0 18px;color:#e3e3e3;font-size:12px;line-height:1.8;word-break:keep-all}
+.resume-panel-actions{display:flex;flex-wrap:wrap;gap:8px}
+.resume-panel-actions .pill-link{font-size:11px;background:#262626;color:#fff;border:1px solid #68592d;padding:9px 12px}
+.resume-panel-actions .pill-link:hover{border-color:var(--yellow)}
+.resume-panel-actions .resume-panel-download{background:var(--yellow);color:#111;border-color:var(--yellow);font-weight:900}
+.contact-right>.contact-resume-button{background:#fff!important;color:#161616!important;border:1px solid #171717!important;margin-bottom:10px;max-width:100%;display:inline-flex;align-items:center;gap:18px}
+.contact-right>.contact-resume-button:hover{background:#f4f2df!important}
+.resume-banner-inline{margin-top:12px;padding:19px 22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;align-items:center;background:#1d1d1f;border:1px solid #3d3d40}
+.resume-banner-inline strong{display:block;font-size:16px;color:#fff;line-height:1.5}
+.resume-banner-inline span{display:block;color:#bcbcc0;font-size:11px}
+.resume-banner-inline>div:last-child{display:flex;flex-wrap:wrap;align-items:center;gap:22px}
+.resume-banner-inline .text-link{font-size:12px;font-weight:800;color:var(--yellow);white-space:nowrap}
+.rolling-indiecraft{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:22px;margin-top:14px;padding:24px 28px;background:#19191b;border:1px solid #454548}
+.rolling-indiecraft h4{color:#fff;font-size:20px;letter-spacing:-.035em;line-height:1.4;margin:10px 0}
+.rolling-indiecraft p{color:#dedee2;font-size:12px;line-height:1.85;word-break:keep-all;max-width:760px}
+.rolling-indiecraft-actions{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+.rolling-indiecraft-actions .pill-link{white-space:nowrap;color:#fff;border:1px solid #58585d;background:#272729;padding:11px 15px}
+.rolling-indiecraft-actions .pill-link:first-child{background:var(--yellow);border-color:var(--yellow);color:#111}
+.project-takeaway{position:relative;padding:26px 30px 26px 33px;margin:20px 0 0;border:1px solid #494344;border-left:4px solid var(--yellow);background:linear-gradient(105deg,#202022 0%,#171719 100%);color:#fff}
+.project-takeaway h4{font-size:clamp(18px,2vw,24px);font-weight:850;letter-spacing:-.035em;margin:10px 0 14px;line-height:1.35}
+.project-takeaway p{max-width:960px;font-size:13px;line-height:1.95;color:#f1f1f1;word-break:keep-all}
+.project-takeaway p+p{margin-top:9px}
+.project-takeaway .overline{color:var(--yellow)}
+/* Keep Rolling LEO's takeaway after G-STAR / INDIECRAFT, before the SPLIT project. */
+@media(max-width:800px){.rolling-indiecraft{grid-template-columns:1fr;padding:20px}.rolling-indiecraft-actions{justify-content:flex-start}.project-takeaway{padding:20px 20px 23px;margin-top:16px}.resume-banner-inline{padding:17px}}
+@media(max-width:620px){.rolling-indiecraft-actions .pill-link{flex:1;text-align:center;justify-content:center}.project-takeaway p{font-size:12px}.resume-info-panel .resume-panel-actions{flex-direction:column;align-items:stretch}.resume-info-panel .resume-panel-actions .pill-link{text-align:center}.resume-banner-inline>div:last-child{gap:14px}.contact-right>.contact-resume-button{width:100%;justify-content:space-between}}
+
+/* v4.6 — top navigation resume shortcut (keep the existing lower resume panel) */
+.nav-inner{gap:12px}
+.nav-resume-action{display:inline-flex;align-items:center;justify-content:center;background:var(--yellow);border-color:var(--yellow);color:#101010;font-weight:900}
+.nav-resume-action:hover{background:#ffe06a;color:#101010}
+@media(max-width:1250px) and (min-width:871px){
+  .nav-inner{gap:9px}
+  .site-nav{gap:12px}
+  .site-nav a{font-size:11px}
+  .brand-label{display:none}
+  .nav-action{padding:10px 10px;font-size:10px}
+}
+@media(max-width:870px) and (min-width:621px){
+  .nav-inner{gap:9px}
+  .nav-action{margin-left:0;padding:10px 11px}
+  .nav-action:not(.nav-resume-action){margin-left:auto}
+  .menu-toggle{margin-left:0}
+}
+@media(max-width:620px){
+  /* Header actions hide on narrow screens; resume remains in MY JOURNEY and CONTACT. */
+  .nav-resume-action{display:none}
+}

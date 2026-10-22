@@ -26,7 +26,9 @@ window.PORTFOLIO_CONTENT = {
     lineage: {title:'리니지 W 일반 몬스터 AI 역기획서',path:'assets/documents/일반 몬스터 AI 시스템_포트폴리오_윤장혁.pdf',kind:'full',note:'일반 몬스터 AI 역기획서 전체 원본 · 18페이지'},
     split: {title:'SPLIT GIGDC 2023 상세 기획서',path:'assets/documents/SPLIT_GIGDC 상세기획서_윤장혁.pdf',kind:'full',note:'GIGDC 2023 출품 상세 기획서 · 16페이지'},
     battleOverview: {title:'Battle Arena 통합 게임 기획서 (게임 전체 개요)',path:'assets/documents/Battle Arena 통합 게임 기획서_윤장혁.pdf',kind:'full',note:'문서 제작 스킬 참고 자료 · 게임의 전체 맥락 · 26페이지'},
-    battleBuff: {title:'Battle Arena 버프 시스템 구현 요청서',path:'assets/documents/Battle Arena 버프 시스템 구현 요청서_윤장혁.pdf',kind:'full',note:'문서 제작 스킬 활용 결과물 · 구현 요청 및 검증 기준 · 12페이지'}
+    battleBuff: {title:'Battle Arena 버프 시스템 구현 요청서',path:'assets/documents/Battle Arena 버프 시스템 구현 요청서_윤장혁.pdf',kind:'full',note:'문서 제작 스킬 활용 결과물 · 구현 요청 및 검증 기준 · 12페이지'},
+    resume: {title:'윤장혁 | 게임 기획자 이력서',path:'assets/documents/윤장혁_이력서.pdf',kind:'full',note:'게임 기획자 이력서 전체 PDF · 2페이지'},
+    rollingIndiecraft: {title:'Rolling LEO | 2026 INDIECRAFT 출품 기획서',path:'assets/documents/ROLLING LEO_인디크래프트 2026.pdf',kind:'full',note:'2026 INDIECRAFT 출품 기획서 · 4페이지'}
   },
   photos: {
     ggc: [{"src": "assets/images/ggc-expo-1.webp", "caption": "2022 GGC 전시장과 행사 부스 전경"}, {"src": "assets/images/ggc-expo-2.webp", "caption": "전시 현장에서 관계자와 게임 기획에 대해 의견을 나누는 모습"}, {"src": "assets/images/ggc-expo-3.webp", "caption": "2022 GGC 현장 단체 사진"}, {"src": "assets/images/ggc-expo-4.webp", "caption": "전시 현장에서 기획 자료를 살펴보는 모습"}],
