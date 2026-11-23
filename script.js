@@ -52,7 +52,20 @@ function showVideo(key){
  modalExternal.textContent=id?'YouTube에서 직접 보기 ↗':'원본 영상 새 탭에서 열기 ↗';
  modalExternal.hidden=false;
 }
-function showPdf(key){const d=data.documents?.[key];if(!d||!d.path)return;showModal(d.title,d.kind==='excerpt'?'DESIGN DOCUMENT / OVERVIEW EXCERPT':'PORTFOLIO PDF');const frame=document.createElement('iframe');frame.className='pdf-frame';frame.src=d.path+'#toolbar=1&navpanes=0&view=FitH';frame.title=d.title+' PDF 미리보기';modalBody.append(frame);const note=document.createElement('div');note.className='modal-note';note.textContent=d.note||'';const a=document.createElement('a');a.href=d.path;a.target='_blank';a.rel='noopener noreferrer';a.textContent=' PDF가 표시되지 않으면 새 탭에서 열기 ↗';note.append(a);modalBody.append(note);modalExternal.href=d.path;modalExternal.textContent='PDF 새 탭에서 열기 ↗';modalExternal.hidden=false;}
+function showPdf(key, requestedPage){
+ const d=data.documents?.[key];if(!d||!d.path)return;
+ const page=Number(requestedPage);
+ const validPage=Number.isInteger(page)&&page>0&&page<=10000;
+ const fragment=new URLSearchParams();
+ if(validPage)fragment.set('page',String(page));
+ fragment.set('toolbar','1');fragment.set('navpanes','0');fragment.set('view','FitH');
+ const source=d.path+'#'+fragment.toString();
+ showModal(d.title+(validPage?' · '+page+'쪽':''),d.kind==='excerpt'?'DESIGN DOCUMENT / OVERVIEW EXCERPT':'PORTFOLIO PDF');
+ const frame=document.createElement('iframe');frame.className='pdf-frame';frame.src=source;frame.title=d.title+' PDF 문서 보기';modalBody.append(frame);
+ const note=document.createElement('div');note.className='modal-note';note.textContent=d.note||'';
+ const a=document.createElement('a');a.href=source;a.target='_blank';a.rel='noopener noreferrer';a.textContent=' PDF가 표시되지 않으면 새 탭에서 열기 ↗';note.append(a);modalBody.append(note);
+ modalExternal.href=source;modalExternal.textContent='PDF 새 탭에서 열기 ↗';modalExternal.hidden=false;
+}
 function showImage(source,caption){if(!source)return;showModal(caption||'이미지 확대','PROJECT / WORK CAPTURE');const img=document.createElement('img');img.src=source;img.alt=caption||'확대된 작업 이미지';img.className='modal-image';modalBody.append(img);modalExternal.href=source;modalExternal.textContent='원본 이미지 열기 ↗';modalExternal.hidden=false;}
 // Video preview cards: local screenshot posters, actual YouTube player loads only after click.
 $$('[data-video-card]').forEach(el=>{const v=data.videos?.[el.dataset.videoCard];if(!v||!v.url)return;const btn=document.createElement('button');btn.type='button';btn.className='video-card';btn.dataset.video=el.dataset.videoCard;btn.setAttribute('aria-label',v.title+' 재생');btn.innerHTML=`<img loading="lazy" src="${escapeHtml(v.poster||'')}" alt="${escapeHtml(v.title)} 영상 썸네일"><span class="video-top-tag">${escapeHtml(v.label||'GAME PLAY')}</span><span class="video-play" aria-hidden="true">▶</span><span class="video-bottom-title">${escapeHtml(v.actionLabel||v.title)}<small>PLAY VIDEO ↗</small></span>`;el.append(btn);});
@@ -99,7 +112,7 @@ dockMin?.addEventListener('click',()=>{
 dockBig?.addEventListener('click',()=>dock.classList.toggle('is-expanded'));
 dockClose?.addEventListener('click',()=>{dock.hidden=true;dock.classList.remove('is-minimized','is-expanded','is-portrait');dockBody.replaceChildren();});
 
-// Independently controlled photo carousels for SPLIT / GGC and Rolling LEO / G-STAR.
+// Independently controlled exhibition photo carousels.
 $$('[data-photo-carousel]').forEach(carousel=>{
  const photos=data.photos?.[carousel.dataset.photoCarousel]||[];
  if(!photos.length)return;
@@ -137,7 +150,7 @@ $$('img[data-local-fallback]').forEach(img=>{img.addEventListener('error',()=>{i
 // Global click handlers
 addEventListener('click',e=>{
  const vid=e.target.closest('[data-video]');if(vid){e.preventDefault();showVideo(vid.dataset.video);return;}
- const pdf=e.target.closest('[data-pdf-view]');if(pdf){e.preventDefault();showPdf(pdf.dataset.pdfView);return;}
+ const pdf=e.target.closest('[data-pdf-view]');if(pdf){e.preventDefault();showPdf(pdf.dataset.pdfView,pdf.dataset.pdfPage);return;}
  const zoom=e.target.closest('[data-zoom]');if(zoom){e.preventDefault();showImage(zoom.dataset.zoom,zoom.dataset.zoomCaption);return;}
  const ext=e.target.closest('[data-external-open]');if(ext){e.preventDefault();const url=safeExternal(data.external?.[ext.dataset.externalOpen]);if(url)window.open(url,'_blank','noopener,noreferrer');return;}
  if(e.target.closest('[data-close-modal]'))closeModal();
