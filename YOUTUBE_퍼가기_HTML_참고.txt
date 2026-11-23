@@ -4,16 +4,20 @@ YouTube 자동 퍼가기 HTML 코드 예시
 ※ 이 사이트는 content.js에서 YouTube URL만 바꾸면 아래 iframe을 자동 생성합니다. 직접 붙여넣을 필요는 없습니다.
 
 [battle-main] Battle Arena — 게임 플레이 / 수정 후 레벨
-https://youtu.be/HG0taYqeBTU
-<iframe src="https://www.youtube.com/embed/HG0taYqeBTU" title="Battle Arena — 게임 플레이 / 수정 후 레벨" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+https://youtu.be/tZ2YNB2A57s
+<iframe src="https://www.youtube.com/embed/tZ2YNB2A57s" title="Battle Arena — 게임 플레이 / 수정 후 레벨" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+[battle-trailer] Battle Arena — 트레일러
+https://youtu.be/24T_xg3oc0Y
+<iframe src="https://www.youtube.com/embed/24T_xg3oc0Y" title="Battle Arena — 트레일러" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 [battle-before] Battle Arena — 수정 전 레벨 플레이
 https://youtu.be/SOXltZO_auk
 <iframe src="https://www.youtube.com/embed/SOXltZO_auk" title="Battle Arena — 수정 전 레벨 플레이" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 [battle-after] Battle Arena — 수정 후 레벨 플레이
-https://youtu.be/HG0taYqeBTU
-<iframe src="https://www.youtube.com/embed/HG0taYqeBTU" title="Battle Arena — 수정 후 레벨 플레이" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+https://youtu.be/tZ2YNB2A57s
+<iframe src="https://www.youtube.com/embed/tZ2YNB2A57s" title="Battle Arena — 수정 후 레벨 플레이" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 [battle-test] Battle Arena — 레벨 및 서버 테스트
 https://youtu.be/y7G1vywwfdA

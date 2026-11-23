@@ -7,9 +7,10 @@
  */
 window.PORTFOLIO_CONTENT = {
   videos: {
-    'battle-main': {title:'Battle Arena — 게임 플레이 / 수정 후 레벨', label:'GAME PLAY / 2026', url:'https://youtu.be/HG0taYqeBTU', poster:'assets/images/battle-hero.webp', actionLabel:'게임 플레이 영상'},
+    'battle-main': {title:'Battle Arena — 게임 플레이 / 수정 후 레벨', label:'GAME PLAY / 2026', url:'https://youtu.be/tZ2YNB2A57s', poster:'assets/images/battle-hero.webp', actionLabel:'게임 플레이 영상'},
+    'battle-trailer': {title:'Battle Arena — 트레일러', label:'TRAILER / 2026', url:'https://youtu.be/24T_xg3oc0Y', poster:'assets/images/battle-hero.webp', actionLabel:'트레일러'},
     'battle-before': {title:'Battle Arena — 수정 전 레벨 플레이', label:'LEVEL DESIGN / BEFORE', url:'https://youtu.be/SOXltZO_auk', poster:'assets/images/battle-before-1.webp', actionLabel:'수정 전 레벨 플레이'},
-    'battle-after': {title:'Battle Arena — 수정 후 레벨 플레이', label:'LEVEL DESIGN / AFTER', url:'https://youtu.be/HG0taYqeBTU', poster:'assets/images/battle-after-1.webp', actionLabel:'수정 후 레벨 플레이'},
+    'battle-after': {title:'Battle Arena — 수정 후 레벨 플레이', label:'LEVEL DESIGN / AFTER', url:'https://youtu.be/tZ2YNB2A57s', poster:'assets/images/battle-after-1.webp', actionLabel:'수정 후 레벨 플레이'},
     'battle-level-review': {title:'Battle Arena — 레벨 확인 영상', label:'LEVEL REVIEW / 2026', url:'https://youtu.be/y7G1vywwfdA', poster:'assets/images/battle-level-review-2.webp', actionLabel:'레벨 확인 영상'},
     'battle-server': {title:'Battle Arena — 서버 연결 확인', label:'SERVER CHECK / 2026', url:'https://youtu.be/g2ITrzavCLQ', poster:'assets/images/battle-server-lobby.webp', actionLabel:'서버 확인 영상'},
     'battle-combat': {title:'Battle Arena — 전투 시스템 확인', label:'COMBAT SYSTEM / 2026', url:'https://youtu.be/fUWQCj-oGrs', poster:'https://i.ytimg.com/vi/fUWQCj-oGrs/hqdefault.jpg', actionLabel:'전투 시스템 영상'},
