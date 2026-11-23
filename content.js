@@ -34,7 +34,7 @@ window.PORTFOLIO_CONTENT = {
   photos: {
     battleStar: [
       {src:'assets/images/battle-gstar-2026-team.jpg',caption:'2026 G-STAR Battle Arena 전시 팀 사진'},
-      {src:'assets/images/battle-gstar-2026-booth.jpg',caption:'Battle Arena 부스에서 관람객과 소통하는 현장'},
+      {src:'assets/images/battle-gstar-2026-booth.jpg',caption:'Battle Arena 전시 부스를 준비하는 모습'},
       {src:'assets/images/battle-gstar-2026-player-1.jpg',caption:'2026 G-STAR 관람객의 Battle Arena 플레이 장면'},
       {src:'assets/images/battle-gstar-2026-player-2.jpg',caption:'전시 현장에서 게임을 체험하는 관람객'}
     ],
